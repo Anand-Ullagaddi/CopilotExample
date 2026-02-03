@@ -1,3 +1,5 @@
+# Ignore Python virtual environments for OctoFit Tracker
+/octofit-tracker/backend/venv/
 .DS_Store
 
 # Virtual Environment
