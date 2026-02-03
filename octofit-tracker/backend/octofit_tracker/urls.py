@@ -15,7 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import JsonResponse
+
+def users_view(request):
+    return JsonResponse({'status': 'ok', 'endpoint': 'users'})
+
+def teams_view(request):
+    return JsonResponse({'status': 'ok', 'endpoint': 'teams'})
+
+def activities_view(request):
+    return JsonResponse({'status': 'ok', 'endpoint': 'activities'})
+
+def leaderboard_view(request):
+    return JsonResponse({'status': 'ok', 'endpoint': 'leaderboard'})
+
+def workouts_view(request):
+    return JsonResponse({'status': 'ok', 'endpoint': 'workouts'})
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/users/', users_view, name='users'),
+    path('api/teams/', teams_view, name='teams'),
+    path('api/activities/', activities_view, name='activities'),
+    path('api/leaderboard/', leaderboard_view, name='leaderboard'),
+    path('api/workouts/', workouts_view, name='workouts'),
 ]
